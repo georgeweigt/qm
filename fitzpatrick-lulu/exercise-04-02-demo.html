@@ -1,0 +1,19 @@
+<!DOCTYPE html><html><body><script src="https://georgeweigt.github.io/eigenmath.js"></script><textarea id="stdin" rows="24" cols="80" style="font-family:courier;font-size:1em">
+-- Fitzpatrick exercise 4-2
+
+psi = sqrt(2 a^3 / pi) / (x^2 + a^2)
+
+p(f) = -i hbar d(f)
+
+"Momentum integral"
+f = psi p(psi)
+F = integral(f)
+check(f == d(F))
+F
+
+"Momentum squared integral"
+f = psi p(p(psi))
+F = integral(f)
+check(f == d(F))
+F
+</textarea> <button onclick="run()">Run</button><br><div id="stdout"></div></body></html>
