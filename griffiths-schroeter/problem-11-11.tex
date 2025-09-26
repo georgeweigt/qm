@@ -1,0 +1,69 @@
+\input{preamble}
+
+\FBOX{
+11.11
+You could derive the spontaneous emission rate (Equation 11.63) without
+the detour through Einstein's $A$ and $B$ coefficients if you knew the
+ground state energy density of the electromagnetic field, $\rho_0(\omega)$,
+for then it would simply be a case of stimulated
+emission (Equation 11.54). To do this honestly would require quantum
+electrodynamics, but if you are prepared to believe that the ground state
+consists of {\it one photon in each classical mode}, then the derivation
+is fairly simple:
+
+\begin{itemize}
+
+\item[(a)]
+To obtain the classical modes, consider an empty cubical box, of side $l$,
+with one corner at the origin.
+Electromagnetic fields (in vacuum) satisfy the classical wave equation
+\begin{equation*}
+\left(\frac{1}{c^2}\frac{\partial^2}{\partial t^2}-\nabla^2\right)
+f(x,y,z,t)=0,
+\end{equation*}
+
+where $f$ stands for any component of $\mathbf E$ or of $\mathbf B$.
+Show that separation of variables,
+and the imposition of the boundary condition $f=0$ on all six surfaces
+yields the standing wave patterns
+\begin{equation*}
+f_{n_x,n_y,n_z}=A\cos(\omega t)
+\sin\left(\frac{n_x\pi}{l}x\right)
+\sin\left(\frac{n_y\pi}{l}y\right)
+\sin\left(\frac{n_z\pi}{l}z\right),
+\end{equation*}
+
+with
+\begin{equation*}
+\omega=\frac{\pi c}{l}\sqrt{n_x^2+n_y^2+n_z^2}.
+\end{equation*}
+
+There are two modes for each triplet of positive integers
+($n_x,n_y,n_z=1,2,3,\ldots$),
+corresponding to the two polarization states.
+
+\item[(b)]
+The energy of a photon is $E=h\nu=\hbar\omega$ (Equation 4.92), so the energy
+in the mode $(n_x,n_y,n_z)$ is
+\begin{equation*}
+E_{n_x,n_y,n_z}=2\frac{\pi\hbar c}{l}\sqrt{n_x^2+n_y^2+n_z^2}.
+\end{equation*}
+
+What, then, is the {\it total} energy per unit volume in the frequency
+range $d\omega$, if each mode gets one photon?
+Express your answer in the form
+\begin{equation*}
+\frac{1}{l^3}dE=\rho_0(\omega)\,d\omega
+\end{equation*}
+
+and read off $\rho_0(\omega)$.
+{\it Hint:} refer to Figure 5.3.
+
+\item[(c)]
+
+\end{itemize}
+}
+
+(a) See Eigenmath script.
+
+\end{document}

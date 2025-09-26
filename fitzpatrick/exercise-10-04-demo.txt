@@ -1,0 +1,8 @@
+"Exercise 10.4"
+
+a = 1 / (2 sigmax^2)
+b = i k
+F = 1 / (2 pi) sqrt(pi / a) exp(b^2 / (4 a))
+check(F == sqrt(sigmax^2 / (2 pi)) exp(-k^2 sigmax^2 / 2))
+
+"ok"

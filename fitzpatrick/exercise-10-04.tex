@@ -1,0 +1,84 @@
+\input{preamble}
+
+\FBOX{
+10.4
+(a) Demonstrate that
+\begin{equation*}
+\frac{1}{2\pi}\int_{-\infty}^\infty dx\,
+\exp\left(-\frac{x^2}{2\sigma_x^2}\right)\cos(kx)
+=\frac{1}{(2\pi\sigma_k^2)^{1/2}}\exp\left(-\frac{k^2}{2\sigma_k^2}\right)
+\end{equation*}
+
+where $\sigma_k=1/\sigma_x$.
+
+\bigskip
+(b) Show that
+\begin{equation*}
+\frac{1}{(2\pi\sigma_k^2)^{1/2}}
+\int_{-\infty}^\infty dk\,\exp\left(-\frac{k^2}{2\sigma_k^2}\right)=1
+\end{equation*}
+
+(c) Finally, by taking the limit $\sigma_x\rightarrow\infty$, conclude that
+\begin{equation*}
+\frac{1}{2\pi}\int_{-\infty}^\infty dx\,\cos(kx)=\delta(x)
+\end{equation*}
+
+where $\delta(x)$ is a Dirac delta function.
+}
+
+(a) Let
+\begin{equation*}
+F(k)
+=\frac{1}{2\pi}\int_{-\infty}^\infty dx\,
+\exp\left(-\frac{x^2}{2\sigma_x^2}\right)\cos(kx)
++\frac{i}{2\pi}\int_{-\infty}^\infty dx\,
+\exp\left(-\frac{x^2}{2\sigma_x^2}\right)\sin(kx)
+\tag{1}
+\end{equation*}
+
+Rewrite as
+\begin{equation*}
+F(k)=\frac{1}{2\pi}\int_{-\infty}^\infty dx\,
+\exp\left(-\frac{x^2}{2\sigma_x^2}+ikx\right)
+\end{equation*}
+
+Consider the Gaussian integral
+\begin{equation*}
+\int_{-\infty}^\infty\exp(-ax^2+bx)\,dx=\sqrt{\frac{\pi}{a}}\exp\left(\frac{b^2}{4a}\right)
+\end{equation*}
+
+For $a=1/(2\sigma_x^2)$ and $b=ik$ we have
+\begin{equation*}
+F(k)=\frac{1}{2\pi}\sqrt{2\pi\sigma_x^2}\exp\left(-\frac{k^2\sigma_x^2}{2}\right)
+\end{equation*}
+
+Simplify the coefficient.
+\begin{equation*}
+F(k)=\sqrt{\frac{\sigma_x^2}{2\pi}}\exp\left(-\frac{k^2\sigma_x^2}{2}\right)
+\end{equation*}
+
+Substitute $1/\sigma_k^2$ for $\sigma_x^2$.
+\begin{equation*}
+F(k)=\frac{1}{\sqrt{2\pi\sigma_k^2}}\exp\left(-\frac{k^2}{2\sigma_k^2}\right)
+\tag{2}
+\end{equation*}
+
+By equality of the real parts of (1) and (2) we have
+\begin{equation*}
+\frac{1}{2\pi}\int_{-\infty}^\infty dx\,
+\exp\left(-\frac{x^2}{2\sigma_x^2}\right)\cos(kx)
+=\frac{1}{\sqrt{2\pi\sigma_k^2}}\exp\left(-\frac{k^2}{2\sigma_k^2}\right)
+\end{equation*}
+
+(b) By the well-known Gaussian integral
+\begin{equation*}
+\int_{-\infty}^\infty\exp(-ax^2)\,dx=\sqrt{\frac{\pi}{a}}
+\end{equation*}
+
+with $a=1/(2\sigma_k^2)$ we have
+\begin{equation*}
+\frac{1}{\sqrt{2\pi\sigma_k^2}}\int_{-\infty}^\infty dk\,\exp\left(-\frac{k^2}{2\sigma_k^2}\right)
+=\frac{1}{\sqrt{2\pi\sigma_k^2}}\sqrt{2\pi\sigma_k^2}=1
+\end{equation*}
+
+\end{document}

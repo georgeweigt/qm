@@ -1,0 +1,181 @@
+\input{preamble}
+
+\FBOX{
+10.7
+Show that, in the Born approximation, the total scattering cross-section
+associated with the Yukawa potential, (10.35), is
+\begin{equation*}
+\sigma_{\rm total}=\left(\frac{2mV_0}{\hbar^2}\right)^2
+\frac{4\pi}{\mu^4(4k^2+\mu^2)}
+\end{equation*}
+}
+
+This is the Yukawa potential.
+\begin{equation*}
+V(r)=\frac{V_0\exp(-\mu r)}{\mu r}
+\tag{10.35}
+\end{equation*}
+
+Let $f(\mathbf k)$ be the scattering amplitude for wave transfer vector
+$\mathbf k=\mathbf k_i-\mathbf k_f$.
+The following formula is the Born approximation for $f(\mathbf k)$.
+\begin{equation*}
+f(\mathbf k)
+=-\frac{m}{2\pi\hbar^2}
+\int\exp(i\mathbf k\cdot\mathbf r)V(\mathbf r)\,d\mathbf r
+\end{equation*}
+
+Convert to polar coordinates where $\kappa=|\mathbf k|$.
+\begin{equation*}
+f(\mathbf k)
+=-\frac{m}{2\pi\hbar^2}
+\int_0^\infty
+\int_0^\pi
+\int_0^{2\pi}
+\exp(i\kappa r\cos\theta)V(r,\theta,\phi)
+\,r^2\sin\theta\,dr\,d\theta\,d\phi
+\end{equation*}
+
+Substitute the Yukawa potential
+\begin{equation*}
+V(r,\theta,\phi)=\frac{V_0\exp(-\mu r)}{\mu r}
+\end{equation*}
+
+to obtain
+\begin{equation*}
+f(\mathbf k)
+=-\frac{mV_0}{2\pi\hbar^2\mu}
+\int_0^\infty
+\int_0^\pi
+\int_0^{2\pi}
+\exp(i\kappa r\cos\theta-\mu r)
+r\sin\theta\,dr\,d\theta\,d\phi
+\end{equation*}
+
+Integrate over $\phi$ (multiply by $2\pi$).
+\begin{equation*}
+f(\mathbf k)
+=-\frac{mV_0}{\hbar^2\mu}
+\int_0^\infty
+\int_0^\pi
+\exp(i\kappa r\cos\theta-\mu r)
+r\sin\theta\,dr\,d\theta
+\end{equation*}
+
+Transform the integral over $\theta$ into an integral over $u$
+where $u=\cos\theta$ and $du=-\sin\theta\,d\theta$.
+The minus sign in $du$ is canceled by interchanging integration limits
+$\cos0=1$ and $\cos\pi=-1$.
+\begin{equation*}
+f(\mathbf k)
+=-\frac{mV_0}{\hbar^2\mu}
+\int_0^\infty
+\int_{-1}^1
+\exp(i\kappa ru-\mu r)
+r\,dr\,du
+\end{equation*}
+
+Solve the integral over $u$.
+\begin{equation*}
+f(\mathbf k)=-\frac{mV_0}{\hbar^2\mu}
+\int_0^\infty
+\left[\frac{1}{i\kappa r}\exp(i\kappa ru-\mu r)\right]_{u=-1}^{u=1}
+r\,dr
+\end{equation*}
+
+Cancel $r$ and evaluate the limits.
+\begin{equation*}
+f(\mathbf k)=-\frac{mV_0}{\hbar^2\mu}
+\int_0^\infty
+\frac{1}{i\kappa}
+\left[\exp(i\kappa r-\mu r)-\exp(-i\kappa r-\mu r)\right]
+dr
+\end{equation*}
+
+Solve the integral over $r$.
+\begin{equation*}
+f(\mathbf k)=-\frac{mV_0}{\hbar^2\mu}
+\left(\frac{1}{i\kappa}\right)
+\left[
+\frac{1}{i\kappa-\mu}
+\exp(i\kappa r-\mu r)
++\frac{1}{i\kappa +\mu}
+\exp(-i\kappa r-\mu r)
+\right]_{r=0}^{r=\infty}
+\end{equation*}
+
+Evaluate the limits. The exponentials vanish at the upper limit.
+\begin{equation*}
+f(\mathbf k)=-\frac{mV_0}{\hbar^2\mu}
+\left(\frac{1}{i\kappa}\right)
+\left[
+-\frac{1}{i\kappa-\mu}
+-\frac{1}{i\kappa+\mu}
+\right]
+=-\frac{2mV_0}{\hbar^2\mu}\left(\frac{1}{\kappa^2+\mu^2}\right)
+\tag{1}
+\end{equation*}
+
+Substitute
+\begin{equation*}
+\kappa^2=2k^2(1-\cos\theta)
+\end{equation*}
+
+to obtain
+\begin{equation*}
+f(\theta)=-\frac{2mV_0}{\hbar^2\mu}\left(\frac{1}{2k^2(1-\cos\theta)+\mu^2}\right)
+\end{equation*}
+
+Hence
+\begin{equation*}
+\frac{d\sigma}{d\Omega}
+=|f(\theta)|^2=\left(\frac{2mV_0}{\hbar^2\mu}\right)^2
+\frac{1}{\left[2k^2(1-\cos\theta)+\mu^2\right]^2}
+\end{equation*}
+
+For the total cross section we have
+\begin{equation*}
+\sigma_{\rm total}=\int\frac{d\sigma}{d\Omega}\,d\Omega
+=\left(\frac{2mV_0}{\hbar^2\mu}\right)^2\int_0^\pi\int_0^{2\pi}
+\frac{1}{\left[2k^2(1-\cos\theta)+\mu^2\right]^2}\,\sin\theta\,d\theta\,d\phi
+\end{equation*}
+
+Integrate over $\phi$ (multiply by $2\pi$).
+\begin{equation*}
+\sigma_{\rm total}=2\pi\left(\frac{2mV_0}{\hbar^2\mu}\right)^2
+\int_0^\pi\frac{1}{\left[2k^2(1-\cos\theta)+\mu^2\right]^2}\,\sin\theta\,d\theta
+\end{equation*}
+
+Transform the integral over $\theta$ into an integral over $u$
+where $u=1-\cos\theta$ and $du=\sin\theta\,d\theta$.
+The limits transform as $1-\cos0=0$ and $1-\cos\pi=2$.
+\begin{equation*}
+\sigma_{\rm total}=2\pi\left(\frac{2mV_0}{\hbar^2\mu}\right)^2
+\int_0^2\frac{1}{\left[2k^2u+\mu^2\right]^2}\,du
+\end{equation*}
+
+Solve the integral.
+\begin{equation*}
+\sigma_{\rm total}=2\pi\left(\frac{2mV_0}{\hbar^2\mu}\right)^2
+\left(-\frac{1}{2k^2(2k^2u+\mu^2)}\right)_{u=0}^{u=2}
+\end{equation*}
+
+Evaluate the limits.
+\begin{equation*}
+\sigma_{\rm total}=2\pi\left(\frac{2mV_0}{\hbar^2\mu}\right)^2
+\frac{2}{4k^2\mu^2+\mu^4}
+\end{equation*}
+
+Hence
+\begin{equation*}
+\sigma_{\rm total}=\left(\frac{2mV_0}{\hbar^2}\right)^2
+\frac{4\pi}{\mu^4(4k^2+\mu^2)}
+\end{equation*}
+
+Noting that $k=|\mathbf p|/\hbar$ we also have
+\begin{equation*}
+\sigma_{\rm total}=\left(\frac{2mV_0}{\hbar}\right)^2
+\frac{4\pi}{\mu^4(4p^2+\mu^2\hbar^2)}
+\end{equation*}
+
+\end{document}

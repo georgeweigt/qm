@@ -1,0 +1,67 @@
+\include{preamble}
+
+\FBOX{
+11.8
+Consider a perturbation to a two-level system with matrix elements
+\begin{equation*}
+H_{ab}'=H_{ba}'=\frac{\alpha}{\sqrt\pi\tau}e^{-(t/\tau)^2},
+\quad
+H_{aa}'=H_{bb}'=0.
+\end{equation*}
+
+where $\tau$ and $\alpha$ are positive constants with the appropriate units.
+
+\begin{itemize}
+
+\item[(a)]
+According to first-order perturbation theory, if the system starts off
+in the state $c_a=1$, $c_b=0$ at $t=-\infty$, what is the probability that
+it will be found in the state $b$ at $t=\infty$?
+
+\item[(b)]
+In the limit that $\tau\rightarrow0$, $H_{ab}'=\alpha\delta(t)$.
+Compute the $\tau\rightarrow0$ limit of your expression from part (a) and
+compare the result of Problem 11.4.
+
+\item[(c)]
+Now consider the opposite extreme: $\omega_0\tau\gg1$.
+What is the limit of your expression from part (a)?
+{\it Comment:} This is an example of the adiabatic theorem
+(Section 11.5.2).
+\end{itemize}
+}
+
+(a) Per first-order perturbation theory
+\begin{equation*}
+\begin{aligned}
+c_a^{(1)}(t)&=1
+\\
+c_b^{(1)}(t)&=0-\frac{i}{\hbar}\int_{-\infty}^tH_{ba}'(t')e^{i\omega_0t'}\,dt'
+=-\frac{i\alpha}{\hbar\sqrt\pi\tau}\int_{-\infty}^te^{-(t'/\tau)^2+i\omega_0t'}\,dt'
+\end{aligned}
+\end{equation*}
+
+Solve for $c_b^{(1)}(\infty)$ using the Gaussian integral
+\begin{equation*}
+\int_{-\infty}^\infty\exp(-Ay^2+By)\,dy=\sqrt{\frac{\pi}{A}}\exp\left(\frac{B^2}{4A}\right)
+\end{equation*}
+
+where $A=1/\tau^2$ and $B=i\omega_0$.
+Hence
+\begin{equation*}
+c_b^{(1)}(\infty)=-\frac{i\alpha}{\hbar}e^{-(\omega_0\tau)^2/4},
+\quad
+P_{a\rightarrow b}=\left|c_b^{(1)}(\infty)\right|^2=\frac{\alpha^2}{\hbar^2}e^{-(\omega_0\tau)^2/2}
+\end{equation*}
+
+(b) Let $\tau\rightarrow0$.
+\begin{equation*}
+\lim_{\tau\rightarrow0}P_{a\rightarrow b}=\frac{\alpha^2}{\hbar^2}
+\end{equation*}
+
+(c) Let $\omega_0\tau\rightarrow\infty$.
+\begin{equation*}
+\lim_{\omega_0\tau\rightarrow\infty}P_{a\rightarrow b}=0
+\end{equation*}
+
+\end{document}

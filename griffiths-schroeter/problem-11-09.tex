@@ -1,0 +1,140 @@
+\input{preamble}
+
+\FBOX{
+11.9
+The first term in Equation 11.32 comes from the $e^{i\omega t}/2$ part of
+$\cos(\omega t)$, and the second term from $e^{-\omega t}/2$.
+Thus dropping the first term is formally equivalent to writing
+$\hat H'=(V/2)e^{-i\omega t}$, which is to say,
+\begin{equation*}
+H_{ba}'=\frac{V_{ba}}{2}e^{-i\omega t},\quad
+H_{ab}'=\frac{V_{ab}}{2}e^{i\omega t}.
+\tag{11.36}
+\end{equation*}
+
+(The latter is required to make the Hamiltonian matrix hermitian---or, if you prefer, to
+pick out the dominant term in the formula analogous to Equation 11.32 for $c_a(t)$.) Rabi
+noticed that if you make this so-called {\bf rotating wave approximation} at the {\it beginning} of
+the calculation, Equation 11.17 can be solved exactly, with no need for perturbation theory,
+and no assumption about the strength of the field.
+
+\begin{itemize}
+
+\item[(a)]
+Solve Equation 11.17 in the rotating wave approximation (Equation 11.36), for the
+usual initial conditions: $c_a(0)=1$, $c_b(0)=0$. Express your results
+($c_a(t)$ and $c_b(t)$) in terms of the {\bf Rabi flopping frequency},
+\begin{equation*}
+\omega_r\equiv\frac{1}{2}\sqrt{(\omega-\omega_0)^2+(|V_{ab}|/\hbar)^2}.
+\tag{11.37}
+\end{equation*}
+
+\item[(b)]
+Determine the transition probability, $P_{a\rightarrow b}(t)$, and show that
+it never exceeds 1.
+Confirm that $|c_a(t)|^2+|c_b(t)|^2=1$.
+
+\item[(c)]
+Check that $P_{a\rightarrow b}(t)$ reduces to the perturbation theory result
+(Equation 11.35) when the perturbation is ``small,'' and state precisely what
+small {\it means} in this context, as a constraint on $V$.
+
+\item[(d)]
+At what time does the system first return to its initial state?
+\end{itemize}
+}
+
+(a) Equation (11.17).
+\begin{equation*}
+\dot c_a=-\frac{i}{\hbar}H_{ab}'e^{-i\omega_0t}c_b,\quad
+\dot c_b=-\frac{i}{\hbar}H_{ba}'e^{i\omega_0t}c_a
+\tag{11.17}
+\end{equation*}
+
+Substitute for $H_{ab}'$ and $H_{ba}'$.
+\begin{equation*}
+\dot c_a=-\frac{i}{2\hbar}V_{ab}e^{-i(\omega_0-\omega)t}c_b,\quad
+\dot c_b=-\frac{i}{2\hbar}V_{ba}e^{i(\omega_0-\omega)t}c_a
+\end{equation*}
+
+From problem 11.3
+\begin{equation*}
+c_b(t)=-\frac{2i}{\hbar}H_{ba}'
+\frac{\sin\left(\tfrac{1}{2}kt\right)}{k}
+\exp\left(\tfrac{i}{2}\omega_0t\right),\quad
+k=\sqrt{\omega_0^2+\frac{4H_{ab}'H_{ba}'}{\hbar^2}}
+\end{equation*}
+
+Substitute $V_{ab}/2$ for $H_{ab}'$, $V_{ba}/2$ for $H_{ba}'$,
+and substitute $\omega_0-\omega$ for $\omega_0$.
+\begin{equation*}
+c_b(t)=-\frac{i}{\hbar}V_{ba}
+\frac{\sin\left(\tfrac{1}{2}kt\right)}{k}
+\exp\left(\tfrac{i}{2}(\omega_0-\omega)t\right),\quad
+k=\sqrt{(\omega_0-\omega)^2+\frac{|V_{ab}|^2}{\hbar^2}}
+\end{equation*}
+
+Substitute $2\omega_r$ for $k$.
+\begin{equation*}
+c_b(t)=-\frac{i}{\hbar}V_{ba}
+\frac{\sin(\omega_rt)}{2\omega_r}
+\exp\left(\tfrac{i}{2}(\omega_0-\omega)t\right)
+\end{equation*}
+
+Solve for $c_a(t)$.
+\begin{equation*}
+c_a(t)=\frac{2i\hbar}{V_{ba}}e^{-i(\omega_0-\omega)t}\dot c_b
+=\left[\cos(\omega_rt)+\frac{i(\omega_0-\omega)}{2\omega_r}\sin(\omega_rt)\right]
+\exp\left(-\tfrac{i}{2}(\omega_0-\omega)t\right)
+\tag{1}
+\end{equation*}
+
+(b) The transition probability $P_{a\rightarrow b}(t)$ is equal to $|c_b(t)|^2$.
+\begin{equation*}
+P_{a\rightarrow b}(t)=|c_b(t)|^2=\frac{|V_{ab}|^2}{\hbar^2}
+\frac{\sin^2(\omega_rt)}{4\omega_r^2}
+\tag{2}
+\end{equation*}
+
+For $\omega=\omega_0$ we have
+\begin{equation*}
+\omega_r^2=\frac{|V_{ab}|^2}{4\hbar^2}
+\end{equation*}
+
+Hence for $\omega=\omega_0$
+\begin{equation*}
+P_{a\rightarrow b}(t)=\sin^2(\omega_rt)\le1
+\end{equation*}
+
+Total probability:
+\begin{equation*}
+|c_a(t)|^2+|c_b(t)|^2
+=\cos^2(\omega_rt)+\frac{(\omega-\omega_0)^2+|V_{ab}|^2/\hbar^2}{4\omega_r^2}\sin^2(\omega_t)=1
+\tag{3}
+\end{equation*}
+
+(c) Rewrite $\omega_r$ as
+\begin{equation*}
+\omega_r=\frac{1}{2\hbar}\sqrt{\hbar^2(\omega_0-\omega)^2+|V_{ab}|^2}
+\end{equation*}
+
+and note that for
+\begin{equation*}
+\hbar^2(\omega_0-\omega)^2\gg|V_{ab}|^2
+\end{equation*}
+
+we have
+\begin{equation*}
+\omega_r\approx\tfrac{1}{2}|\omega_0-\omega|
+\end{equation*}
+
+Substitute this approximation into the formula for $c_b(t)$ to obtain
+\begin{equation*}
+c_b(t)=-\frac{i}{\hbar}V_{ba}
+\frac{\sin\left(\tfrac{1}{2}|\omega_0-\omega|t\right)}{|\omega_0-\omega|}
+\exp\left(\tfrac{i}{2}(\omega_0-\omega)t\right)
+\end{equation*}
+
+This is equivalent to $c_b(t)$ obtained from first order perturbation expansion.
+
+\end{document}

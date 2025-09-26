@@ -1,0 +1,14 @@
+"Problem 11.8"
+
+Hba = alpha / (sqrt(pi) tau) exp(-(t/tau)^2)
+
+-- Gaussian integral
+
+A = 1 / tau^2
+B = i omega0
+
+I = -i / hbar alpha / (sqrt(pi) tau) sqrt(pi / A) exp(B^2 / (4 A))
+I
+
+P = conj(I) I
+P

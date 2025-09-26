@@ -1,0 +1,45 @@
+\input{preamble}
+
+\FBOX{
+11.14
+From the commutators of $L_z$ with $x$, $y$, and $z$ (Equation 4.122):
+\begin{equation*}
+[L_z,x]=i\hbar y,\quad[L_z,y]=-i\hbar x,\quad[L_z,z]=0,\tag{11.77}
+\end{equation*}
+
+obtain the selection rule for $\Delta m$ and Equation 11.76.
+{\it Hint:} Sandwich each commutator between
+$\langle n'l'm'|$ and $|nlm\rangle$.
+}
+
+Recall that
+\begin{equation*}
+L_z|nlm\rangle=m\hbar|nlm\rangle,\quad
+\langle n'l'm'|L_z=m'\hbar\langle n'l'm'|
+\end{equation*}
+
+Hence
+\begin{align*}
+\langle n'l'm'|(L_zx-xL_z)|nlm\rangle
+&=(m'-m)\hbar\langle n'l'm'|x|nlm\rangle=i\hbar\langle n'l'm'|y|nlm\rangle
+\\
+\langle n'l'm'|(L_zy-yL_z)|nlm\rangle
+&=(m'-m)\hbar\langle n'l'm'|y|nlm\rangle=-i\hbar\langle n'l'm'|x|nlm\rangle
+\\
+\langle n'l'm'|(L_zz-zL_z)|nlm\rangle
+&=(m'-m)\hbar\langle n'l'm'|z|nlm\rangle=0
+\end{align*}
+
+For clarity, let
+\begin{equation*}
+\Delta m=m'-m,\quad X=\langle n'l'm'|x|nlm\rangle,\quad
+Y=\langle n'l'm'|y|nlm\rangle,\quad Z=\langle n'l'm'|z|nlm\rangle
+\end{equation*}
+
+Then
+\begin{align*}
+\Delta m&=\frac{iY}{X}=-\frac{iX}{Y},\quad\Delta mZ=0
+\end{align*}
+
+
+\end{document}

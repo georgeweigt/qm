@@ -1,0 +1,7 @@
+"Problem 11.11"
+
+"Verify part (a)"
+f = A cos(omega t) sin(x nx pi / L) sin(y ny pi / L) sin(z nz pi / L)
+omega = pi c / L sqrt(nx^2 + ny^2 + nz^2)
+check(d(f,t,t) / c^2 - d(f,x,x) - d(f,y,y) - d(f,z,z) == 0)
+"ok"

@@ -1,0 +1,56 @@
+\input{preamble}
+
+\FBOX{
+10.1
+Justify Equation (10.5).
+}
+
+\begin{equation*}
+(\nabla^2+k^2)\psi(\mathbf x)=\frac{2m}{\hbar^2}
+\langle\mathbf x|H_1|\psi\rangle
+\tag{10.5}
+\end{equation*}
+
+Start with equation (10.4).
+\begin{equation*}
+(H_0+H_1)|\psi\rangle=E|\psi\rangle
+\end{equation*}
+
+Rewrite as
+\begin{equation*}
+H_1|\psi\rangle=-H_0|\psi\rangle+E|\psi\rangle
+\end{equation*}
+
+Multiply both sides by $\langle\mathbf x|$.
+\begin{equation*}
+\langle\mathbf x|H_1|\psi\rangle=-\langle\mathbf x|H_0|\psi\rangle+E\langle\mathbf x|\psi\rangle
+\end{equation*}
+
+Noting that in the Schrodinger representation
+\begin{equation*}
+\langle\mathbf x|H_0|\psi\rangle=-\frac{\hbar^2}{2m}\nabla^2\psi(\mathbf x)
+\end{equation*}
+
+we have
+\begin{equation*}
+\langle\mathbf x|H_1|\psi\rangle=\frac{\hbar^2}{2m}\nabla^2\psi(\mathbf x)
++E\langle\mathbf x|\psi\rangle
+\end{equation*}
+
+By equation (10.6)
+\begin{equation*}
+E=\frac{\hbar^2k^2}{2m}\tag{10.6}
+\end{equation*}
+
+and by $\langle\mathbf x|\psi\rangle=\psi(\mathbf x)$ we have
+\begin{equation*}
+\langle\mathbf x|H_1|\psi\rangle=\frac{\hbar^2}{2m}\nabla^2\psi(\mathbf x)
++\frac{\hbar^2k^2}{2m}\psi(\mathbf x)
+\end{equation*}
+
+Multiply both sides by $2m/\hbar^2$.
+\begin{equation*}
+\frac{2m}{\hbar^2}\langle\mathbf x|H_1|\psi\rangle=\nabla^2\psi(\mathbf x)+k^2\psi(\mathbf x)
+\end{equation*}
+
+\end{document}

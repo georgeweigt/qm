@@ -1,0 +1,52 @@
+\input{preamble}
+
+\FBOX{
+10.2
+Justify Equation (10.7).
+}
+
+\begin{equation*}
+\psi(\mathbf x)=\phi(\mathbf x)+\frac{2m}{\hbar^2}
+\int d^3\mathbf x'\,G(\mathbf x,\mathbf x')
+\langle\mathbf x|H_1|\psi\rangle
+\tag{10.7}
+\end{equation*}
+
+Equation (10.7) is justified if it satisfies equation (10.5).
+\begin{equation*}
+(\nabla^2+k^2)\psi(\mathbf x)=\frac{2m}{\hbar^2}\langle\mathbf x|H_1|\psi\rangle
+\tag{10.5}
+\end{equation*}
+
+Wave function $\phi(\mathbf x)$ is a free particle solution such that
+\begin{equation*}
+(\nabla^2+k^2)\phi(\mathbf x)=0
+\end{equation*}
+
+Hence
+\begin{equation*}
+(\nabla^2+k^2)\psi(\mathbf x)
+=\frac{2m}{\hbar^2}\int d^3\mathbf x'\,(\nabla^2+k^2)G(\mathbf x,\mathbf x')
+\langle\mathbf x|H_1|\psi\rangle
+\end{equation*}
+
+Consider equation (10.8).
+\begin{equation*}
+(\nabla^2+k^2)G(\mathbf x,\mathbf x')=\delta^3(\mathbf x-\mathbf x')
+\tag{10.8}
+\end{equation*}
+
+By equation (10.8)
+\begin{equation*}
+(\nabla^2+k^2)\psi(\mathbf x)
+=\frac{2m}{\hbar^2}\int d^3\mathbf x'\,\delta^3(\mathbf x-\mathbf x')
+\langle\mathbf x|H_1|\psi\rangle
+\end{equation*}
+
+By the sifting property of $\delta^3$
+\begin{equation*}
+(\nabla^2+k^2)\psi(\mathbf x)
+=\frac{2m}{\hbar^2}\langle\mathbf x|H_1|\psi\rangle
+\end{equation*}
+
+\end{document}

@@ -1,0 +1,73 @@
+\input{preamble}
+
+\FBOX{
+10.3
+Consider the Green's function for the Helmholtz equation:
+\begin{equation*}
+(\nabla^2+k^2)G(\mathbf x,\mathbf x')=\delta^3(\mathbf x-\mathbf x')
+\end{equation*}
+
+(a) Assuming, as seems reasonable, that $G(\mathbf x,\mathbf x')=G(R)$,
+where $\mathbf R=\mathbf x-\mathbf x'$,
+demonstrate that the two independent solutions in the region $R>0$ are
+\begin{equation*}
+G(R)=-\frac{e^{\pm ikR}}{4\pi R}
+\end{equation*}
+
+(b) Show that
+\begin{equation*}
+\int_VdV\,(\nabla^2+k^2)G(R)=1
+\end{equation*}
+
+where $V$ is a sphere of vanishing radius centered on $R=0$.
+Hence, deduce that $G(R)$ is the required Green's function.
+}
+
+(a)
+\begin{equation*}
+\nabla^2G=\frac{1}{R^2}\frac{\partial}{\partial R}
+\left(R^2\frac{\partial G}{\partial R}\right)
+=\frac{k^2\exp(\pm ikR)}{4\pi R}=-k^2G
+\end{equation*}
+
+Hence for $R>0$ we have $\delta^3(\mathbf R)=0$ and
+\begin{equation*}
+(\nabla^2+k^2)G=\delta^3(\mathbf R)=0
+\end{equation*}
+
+(b) By $\nabla^2=\nabla\cdot\nabla$ and the divergence theorem we have
+\begin{equation*}
+\int_VdV\,\nabla^2G
+=\int_VdV\,\nabla\cdot\nabla G
+=\oint_SdS\,\nabla G\cdot\hat{\mathbf n}
+\end{equation*}
+
+For the surface of a sphere $\hat{\mathbf n}=(1,\theta,\phi)$
+and because $G$ is independent of $\theta$ and $\phi$ we have
+\begin{equation*}
+\nabla G\cdot\hat{\mathbf n}=\frac{\partial G}{\partial R}
+\end{equation*}
+
+It follows that
+\begin{equation*}
+\oint_SdS\,\nabla G\cdot\hat{\mathbf n}=4\pi R^2\frac{\partial G}{\partial R}
+=\exp(\pm ikR)\mp ikR\exp(\pm ikR)
+\end{equation*}
+
+For the $k^2$ term we have
+\begin{equation*}
+\int_VdV\,k^2G=4\pi k^2\int_0^{R'}GR^2\,dR
+=\pm ikR'\exp(\pm ikR')-\exp(\pm ikR')+1
+\end{equation*}
+
+Hence
+\begin{equation*}
+\lim_{R\rightarrow0}\left(\oint_SdS\,\nabla G\cdot\hat{\mathbf n}\right)=1
+\end{equation*}
+
+and
+\begin{equation*}
+\lim_{R'\rightarrow0}\left(\int_VdV\,k^2G\right)=0
+\end{equation*}
+
+\end{document}

@@ -1,0 +1,7 @@
+\documentclass[12pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath}
+\parindent=0pt
+\pdfinfoomitdate=1
+\pdftrailerid{}
+\begin{document}
