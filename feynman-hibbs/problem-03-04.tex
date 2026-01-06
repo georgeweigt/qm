@@ -28,13 +28,11 @@ K_0(b,a)=\left(\frac{m}{2\pi i\hbar(t_b-t_a)}\right)^{1/2}
 \end{equation*}
 
 Rewrite (3.3) as follows.
-\begin{multline*}
+\begin{equation*}
 K_0(b,a)=\left(\frac{m}{2\pi i\hbar(t_b-t_a)}\right)^{1/2}
-\\
-{}\times
 \exp\left(\frac{imx_b^2}{2\hbar(t_b-t_a)}\right)
 \exp\left(\frac{imx_a^2}{2\hbar(t_b-t_a)}-\frac{imx_bx_a}{\hbar(t_b-t_a)}\right)
-\end{multline*}
+\end{equation*}
 
 Then for $t_a=0$
 \begin{equation*}
@@ -49,16 +47,14 @@ By equation (3.42) we have
 \end{equation*}
 
 Hence
-\begin{multline*}
+\begin{equation*}
 \psi(x_b,t_b)=C\left(\frac{m}{2\pi i\hbar t_b}\right)^{1/2}
-\\
-{}\times
 \exp\left(\frac{imx_b^2}{2\hbar t_b}\right)
 \int_{-\infty}^\infty
 \exp\left(\frac{imx_a^2}{2\hbar t_b}-\frac{imx_bx_a}{\hbar t_b}\right)
 \exp\left(\frac{ipx_a}{\hbar}\right)\,dx_a
 \tag{1}
-\end{multline*}
+\end{equation*}
 
 Rewrite the integral as
 \begin{equation*}
@@ -74,12 +70,11 @@ B&=-\frac{imx_b}{\hbar t_b}+\frac{ip}{\hbar}
 
 Solve the integral.
 \begin{align*}
-&\int_{-\infty}^\infty
+\int_{-\infty}^\infty
 \exp\left(\frac{imx_a^2}{2\hbar t_b}-\frac{imx_bx_a}{\hbar t_b}\right)\,dx_a
+&=\left(-\frac{\pi}{A}\right)^{1/2}\exp\left(-\frac{B^2}{4A}\right)
 \\
-&\quad{}=\left(-\frac{\pi}{A}\right)^{1/2}\exp\left(-\frac{B^2}{4A}\right)
-\\
-&\quad{}=\left(\frac{2\pi i\hbar t_b}{m}\right)^{1/2}
+&=\left(\frac{2\pi i\hbar t_b}{m}\right)^{1/2}
 \exp\left(-\frac{i m x_b^2}{2\hbar t_b}-\frac{ip^2t_b}{2m\hbar}+\frac{ipx_b}{\hbar}\right)
 \tag{2}
 \end{align*}
