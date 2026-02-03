@@ -1,0 +1,117 @@
+\input{preamble}
+
+\FBOX{
+4.74
+Neither Example 4.4 nor Problem 4.73 actually solved the Schr\"odinger
+equation for the Stern-Gerlach experiment. In this problem we will see how to set
+up that calculation. The Hamiltonian for a neutral, spin-1/2 particle traveling through
+a Stern-Gerlach device is
+\begin{equation*}
+H=\frac{p^2}{2m}-\gamma\mathbf B\cdot\mathbf S
+\end{equation*}
+
+where $\mathbf B$ is given by Equation 4.169.
+The most general wave function for a spin-1/2
+particle---including both spatial and spin degrees of freedom---is
+\begin{equation*}
+\mathbf\Psi(\mathbf r,t)=\Psi_+(\mathbf r,t)\chi_++\Psi_-(\mathbf r,t)\chi_-
+\end{equation*}
+
+(a) Put $\mathbf\Psi(\mathbf r,t)$ into the Schr\"odinger equation
+\begin{equation*}
+H\mathbf\Psi=i\hbar\frac{\partial}{\partial t}\mathbf\Psi
+\end{equation*}
+
+to obtain a pair of coupled equations for $\Psi_\pm$.
+}
+
+From equations (4.140) and (4.141) we have
+\begin{equation*}
+\chi_+=\begin{pmatrix}1\\0\end{pmatrix},\quad
+\chi_-=\begin{pmatrix}0\\1\end{pmatrix}
+\end{equation*}
+
+Hence
+\begin{equation*}
+\mathbf\Psi=\begin{pmatrix}\Psi_+\\\Psi_-\end{pmatrix}
+\end{equation*}
+
+From equation (4.169) we have for a beam in the $y$ direction
+\begin{equation*}
+\mathbf B(x,y,z)=-\alpha x\begin{pmatrix}1\\0\\0\end{pmatrix}
++(B_0+\alpha z)\begin{pmatrix}0\\0\\1\end{pmatrix}
+\end{equation*}
+
+From equation (4.148)
+\begin{equation*}
+\mathbf S=\frac{\hbar}{2}\begin{pmatrix}\sigma_x\\\sigma_y\\\sigma_z\end{pmatrix}
+\end{equation*}
+
+Hence
+\begin{equation*}
+\mathbf B\cdot\mathbf S
+=-\frac{\hbar}{2}\alpha x\sigma_x
++\frac{\hbar}{2}(B_0+\alpha z)\sigma_z
+\end{equation*}
+
+Noting that
+\begin{equation*}
+\sigma_x\mathbf\Psi
+=\begin{pmatrix}0&1\\1&0\end{pmatrix}\mathbf\Psi
+=\begin{pmatrix}\Psi_-\\\Psi_+\end{pmatrix}
+\end{equation*}
+
+and
+\begin{equation*}
+\sigma_z\mathbf\Psi
+=\begin{pmatrix}1&0\\0&-1\end{pmatrix}\mathbf\Psi
+=\begin{pmatrix}\Psi_+\\-\Psi_-\end{pmatrix}
+\end{equation*}
+
+we have
+\begin{equation*}
+\mathbf B\cdot\mathbf S
+=-\frac{\hbar}{2}\alpha x\begin{pmatrix}\Psi_-\\\Psi_+\end{pmatrix}
++\frac{\hbar}{2}(B_0+\alpha z)\begin{pmatrix}\Psi_+\\-\Psi_-\end{pmatrix}
+\end{equation*}
+
+For the kinetic energy term in $H$
+\begin{align*}
+\frac{p^2}{2m}\mathbf\Psi
+&=-\frac{\hbar^2}{2m}\nabla^2\mathbf\Psi
+\\
+&=-\frac{\hbar^2}{2m}\nabla^2\Psi_+\chi_+ % \begin{pmatrix}1\\0\end{pmatrix}
+-\frac{\hbar^2}{2m}\nabla^2\Psi_-\chi_- % \begin{pmatrix}0\\1\end{pmatrix}
+\\
+&=-\frac{\hbar^2}{2m}\begin{pmatrix}\nabla^2\Psi_+\\\nabla^2\Psi_-\end{pmatrix}
+\end{align*}
+
+From the Schr\"odinger equation
+\begin{equation*}
+\left(\frac{p^2}{2m}-\gamma\mathbf B\cdot\mathbf S\right)\mathbf\Psi
+=i\hbar\frac{\partial}{\partial t}\mathbf\Psi
+\end{equation*}
+
+we obtain
+\begin{equation*}
+-\frac{\hbar^2}{2m}\begin{pmatrix}\nabla^2\Psi_+\\\nabla^2\Psi_-\end{pmatrix}
++\frac{\hbar}{2}\gamma\alpha x\begin{pmatrix}\Psi_-\\\Psi_+\end{pmatrix}
+-\frac{\hbar}{2}\gamma(B_0+\alpha z)\begin{pmatrix}\Psi_+\\-\Psi_-\end{pmatrix}
+=i\hbar\frac{\partial}{\partial t}\begin{pmatrix}\Psi_+\\\Psi_-\end{pmatrix}
+\end{equation*}
+
+Then in component form we obtain the coupled equations
+\begin{align*}
+-\frac{\hbar^2}{2m}\nabla^2\Psi_+
++\frac{\hbar}{2}\gamma\alpha x\Psi_-
+-\frac{\hbar}{2}\gamma(B_0+\alpha z)\Psi_+
+&=i\hbar\frac{\partial}{\partial t}\Psi_+
+\\[1ex]
+-\frac{\hbar^2}{2m}\nabla^2\Psi_-
++\frac{\hbar}{2}\gamma\alpha x\Psi_+
++\frac{\hbar}{2}\gamma(B_0+\alpha z)\Psi_-
+&=i\hbar\frac{\partial}{\partial t}\Psi_-
+\end{align*}
+
+
+\end{document}
