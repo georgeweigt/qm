@@ -1,0 +1,107 @@
+\input{preamble}
+
+\FBOX{
+6.14
+In this problem you will establish the correspondence between
+Equations 6.30 and 6.31.
+
+\bigskip
+(a) Diagonalize the matrix
+\begin{equation*}
+\textsf M=\begin{pmatrix}
+1 & -\varphi/N
+\\
+\varphi/N & 1
+\end{pmatrix}
+\end{equation*}
+
+to obtain the matrix
+\begin{equation*}
+\textsf M'=\textsf S\textsf M\textsf S^{-1},
+\end{equation*}
+
+where $\textsf S^{-1}$ is the unitary matrix whose columns are the
+(normalized) eigenvectors of $\textsf M$.
+
+\bigskip
+(b) Use the binomial expansion to show that
+$\lim_{N\rightarrow\infty}=(\textsf M')^N$ is a diagonal matrix
+with entries $e^{-i\varphi}$ and $e^{i\varphi}$ on the diagonal.
+
+\bigskip
+(c) Transform back to the original basis to show that
+\begin{equation*}
+\lim_{N\rightarrow\infty}\textsf M^N=\textsf S^{-1}
+\left[\lim_{N\rightarrow\infty}(\textsf M')^N\right]\textsf S
+\end{equation*}
+
+agrees with the matrix in Equation 6.31.
+}
+
+(a)
+\begin{equation*}
+\left|
+\begin{matrix}
+1-\lambda & -\varphi/N
+\\
+\varphi/N & 1-\lambda
+\end{matrix}
+\right|=\lambda^2-2\lambda+1+\frac{\varphi^2}{N^2}=0
+\end{equation*}
+
+Hence
+\begin{equation*}
+\lambda=1\pm\frac{i\varphi}{N}
+\end{equation*}
+
+The eigenvectors are
+\begin{equation*}
+\frac{1}{\sqrt2}
+\begin{pmatrix}
+\pm1
+\\
+-i
+\end{pmatrix}
+\end{equation*}
+
+Hence
+\begin{equation*}
+\textsf S^{-1}=\frac{1}{\sqrt2}\begin{pmatrix}
+1 & -1
+\\
+-i & -i
+\end{pmatrix}
+\end{equation*}
+
+and
+\begin{equation*}
+\textsf M'=\begin{pmatrix}
+1+i\varphi/N & 0
+\\
+0 & 1-i\varphi/N
+\end{pmatrix}
+\end{equation*}
+
+(b)
+\begin{equation*}
+\left(1+\frac{i\varphi}{N}\right)^N
+=\sum_{k=0}^N\binom{N}{k}1^{N-k}\left(\frac{i\varphi}{N}\right)^k
+\end{equation*}
+
+(c)
+\begin{equation*}
+\textsf S^{-1}
+\begin{pmatrix}
+e^{i\phi} & 0
+\\
+0 & e^{-i\varphi}
+\end{pmatrix}
+\textsf S
+=\begin{pmatrix}
+\cos\varphi & -\sin\varphi
+\\
+\sin\varphi & \cos\varphi
+\end{pmatrix}
+\end{equation*}
+
+\end{document}

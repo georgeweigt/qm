@@ -1,0 +1,39 @@
+"Problem 6.14"
+
+M = ((1,-phi/N),(phi/N,1))
+
+det(M - lambda ((1,0),(0,1)))
+
+a = 1
+b = -2
+c = 1 + phi^2/N^2
+
+(-b + sqrt(b^2 - 4 a c)) / (2 a)
+
+(-b - sqrt(b^2 - 4 a c)) / (2 a)
+
+"Verify eigenvalues and eigenvectors"
+
+lambda1 = 1 + i phi / N
+x1 = (1,-i)
+x1 = x1 / sqrt(dot(conj(x1),x1)) -- normalize
+check(dot(M,x1) == lambda1 x1)
+
+lambda2 = 1 - i phi / N
+x2 = (-1,-i)
+x2 = x2 / sqrt(dot(conj(x2),x2)) -- normalize
+check(dot(M,x2) == lambda2 x2)
+
+"ok"
+
+S = inv(transpose((x1,x2)))
+
+check(inv(S) == ((1,-1),(-i,-i)) / sqrt(2))
+
+dot(S,M,inv(S))
+
+"Verify part (c)"
+A = ((exp(i phi),0),(0,exp(-i phi)))
+B = ((cos(phi),-sin(phi)),(sin(phi),cos(phi)))
+check(dot(inv(S),A,S) == B)
+"ok"
