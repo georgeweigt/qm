@@ -82,10 +82,41 @@ and
 \end{pmatrix}
 \end{equation*}
 
-(b)
+(b) Noting that
 \begin{equation*}
-\left(1+\frac{i\varphi}{N}\right)^N
-=\sum_{k=0}^N\binom{N}{k}1^{N-k}\left(\frac{i\varphi}{N}\right)^k
+\binom{N}{k}=\frac{N(N-1)(N-2)\cdots(N-k+1)}{k!}
+\end{equation*}
+
+we have
+\begin{equation*}
+\lim_{N\rightarrow\infty}
+\binom{N}{k}\frac{1}{N^k}
+=\frac{1}{k!}\left(1-\frac{1}{N}\right)\left(1-\frac{2}{N}\right)\cdots\left(1-\frac{k-1}{N}\right)
+=\frac{1}{k!}
+\end{equation*}
+
+Hence
+\begin{equation*}
+\lim_{N\rightarrow\infty}\left(1+\frac{i\varphi}{N}\right)^N
+=\lim_{N\rightarrow\infty}\sum_{k=0}^N\binom{N}{k}1^{N-k}\left(\frac{i\varphi}{N}\right)^k
+=\sum_{k=0}^\infty\frac{(i\varphi)^k}{k!}
+=e^{i\varphi}
+\end{equation*}
+
+Hence
+\begin{equation*}
+\lim_{N\rightarrow\infty}
+\begin{pmatrix}
+1+i\varphi/N & 0
+\\
+0 & 1-i\varphi/N
+\end{pmatrix}^N
+=
+\begin{pmatrix}
+e^{i\varphi} & 0
+\\
+0 & e^{-i\varphi}
+\end{pmatrix}
 \end{equation*}
 
 (c)
