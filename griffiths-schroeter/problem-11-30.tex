@@ -1,0 +1,30 @@
+\input{preamble}
+
+\FBOX{
+11.30
+In this problem we will recover the results Section 11.2.1 directly from the
+Hamiltonian for a charged particle in an electromagnetic field (Equation 4.188). An
+electromagnetic wave can be described by the potentials
+\begin{equation*}
+\mathbf A=\frac{\mathbf E_0}{\omega}\sin(\mathbf k\cdot\mathbf r-\omega t),
+\qquad\varphi=0
+\end{equation*}
+
+where in order to satisfy Maxwell’s equations, the wave must be transverse
+($\mathbf E_0\cdot\mathbf k=0$)
+and of course travel at the speed of light ($\omega=c|\mathbf k|$).
+
+(a) Find the electric and magnetic fields for this plane wave.
+}
+
+(a)
+\begin{align*}
+\mathbf E&=-\nabla\phi-\frac{\partial}{\partial t}\mathbf A
+=\mathbf E_0\cos(\mathbf k\cdot\mathbf r-\omega t)
+\\[1ex]
+\mathbf B&=\nabla\times\mathbf A
+=\mathbf k\times\frac{\mathbf E_0}{\omega}\cos(\mathbf k\cdot\mathbf r-\omega t)
+=\mathbf k\times\frac{\mathbf E}{\omega}
+\end{align*}
+
+\end{document}
