@@ -14,9 +14,7 @@ A = E0 / omega sin(dot(k,r) - omega t)
 E = -d(A,t)
 
 check(curl(A) == cross(k,E0) / omega cos(dot(k,r) - omega t))
-
 check(curl(A) == cross(k,E) / omega)
-
 check(curl(A) == -cross(E,k) / omega)
 
 "ok"
@@ -25,22 +23,18 @@ check(curl(A) == -cross(E,k) / omega)
 
 -- p dot A
 
-T1 = -i hbar div(A psi())
+T1 = -i hbar div(A psi(x,y,z,t))
 
 -- A dot p
 
-T2 = dot(A, -i hbar grad(psi()))
+T2 = dot(A, -i hbar grad(psi(x,y,z,t)))
 
-check(T1 + T2 == 2 T2 - i hbar div(A) psi())
+check(T1 + T2 == 2 T2 - i hbar psi(x,y,z,t) div(A))
 
 H = e / m T2
+Y = e / (2 i m omega) exp(i dot(k,r) - i omega t)
 
-Y = exp(i dot(k,r) - i omega t)
-
-Y1 = e / (2 i m omega) Y
-Y2 = e / (2 i m omega) conj(Y)
-
-check(H == (Y1 - Y2) dot(E0, -i hbar grad(psi())))
+check(H == (Y + conj(Y)) dot(E0, -i hbar grad(psi(x,y,z,t))))
 
 "ok"
 </textarea>
