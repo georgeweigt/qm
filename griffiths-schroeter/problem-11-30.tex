@@ -15,6 +15,23 @@ where in order to satisfy Maxwell’s equations, the wave must be transverse
 and of course travel at the speed of light ($\omega=c|\mathbf k|$).
 
 (a) Find the electric and magnetic fields for this plane wave.
+
+(b) The Hamiltonian may be written as $H^0+H'$ where $H^0$
+is the Hamiltonian in the
+absence of the electromagnetic wave and $H'$ is the perturbation.
+Show that the
+perturbation is given by
+\begin{equation*}
+\hat H'(t)=\frac{e}{2im\omega}e^{i\mathbf k\cdot\mathbf r}
+\mathbf E_0\cdot\hat{\mathbf p}e^{-i\omega t}
+-\frac{e}{2im\omega}e^{-i\mathbf k\cdot\mathbf r}
+\mathbf E_0\cdot\hat{\mathbf p}e^{i\omega t},
+\tag{11.27}
+\end{equation*}
+
+plus a term proportional to $E_0^2$ that we will ignore.
+{\it Note}: the first term corresponds
+to absorption and the second to emission.
 }
 
 (a)
@@ -26,5 +43,41 @@ and of course travel at the speed of light ($\omega=c|\mathbf k|$).
 =\mathbf k\times\frac{\mathbf E_0}{\omega}\cos(\mathbf k\cdot\mathbf r-\omega t)
 =\mathbf k\times\frac{\mathbf E}{\omega}
 \end{align*}
+
+(b)
+\begin{align*}
+H&=\frac{1}{2m}(\mathbf p+e\mathbf A)\cdot(\mathbf p+e\mathbf A)-e\varphi+V
+\\[1ex]
+&=\frac{1}{2m}\left(\mathbf p^2+\mathbf p\cdot e\mathbf A+e\mathbf A\cdot\mathbf p+e^2\mathbf A^2\right)
+-e\varphi+V
+\end{align*}
+
+Let
+\begin{equation*}
+H^0=\frac{1}{2m}\mathbf p^2-e\varphi+V
+\end{equation*}
+
+and
+\begin{equation*}
+H'=\frac{1}{2m}\left(\mathbf p\cdot e\mathbf A+e\mathbf A\cdot\mathbf p+e^2\mathbf A^2\right)
+\end{equation*}
+
+We have
+\begin{equation*}
+(\mathbf p\cdot e\mathbf A+e\mathbf A\cdot\mathbf p)\psi
+=2e\mathbf A\cdot\mathbf p\psi-i\hbar\psi\nabla\cdot\mathbf A
+\end{equation*}
+
+Taking $\nabla\cdot\mathbf A=0$ and dropping the $e^2\mathbf A^2$ term we have
+\begin{equation*}
+H'=\frac{e}{m}\mathbf A\cdot\mathbf p
+=\frac{e}{m\omega}\sin(\mathbf k\cdot\mathbf r-\omega t)\mathbf E_0\cdot\mathbf p
+\end{equation*}
+
+In exponential form
+\begin{equation*}
+H'=\frac{e}{2im\omega}\exp(i\mathbf k\cdot\mathbf r-i\omega t)\mathbf E_0\cdot\mathbf p
+-\frac{e}{2im\omega}\exp(-i\mathbf k\cdot\mathbf r+i\omega t)\mathbf E_0\cdot\mathbf p
+\end{equation*}
 
 \end{document}
