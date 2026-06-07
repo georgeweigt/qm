@@ -3,9 +3,25 @@
 <textarea id="stdin" rows="24" cols="80" style="font-family:courier;font-size:1em">
 "Problem 11.30"
 
-"Part (b)"
+"Verify part (a)"
 
-A = sin(kx x + ky y + kz z - omega t) (E0x,E0y,E0z) / omega
+E0 = (E0x,E0y,E0z)
+k = (kx,ky,kz)
+r = (x,y,z)
+
+A = E0 / omega sin(dot(k,r) - omega t)
+
+E = -d(A,t)
+
+check(curl(A) == cross(k,E0) / omega cos(dot(k,r) - omega t))
+
+check(curl(A) == cross(k,E) / omega)
+
+check(curl(A) == -cross(E,k) / omega)
+
+"ok"
+
+"Verify part (b)"
 
 -- p dot A
 
@@ -19,12 +35,12 @@ check(T1 + T2 == 2 T2 - i hbar div(A) psi())
 
 H = e / m T2
 
-Y = exp(i kx x + i ky y + i kz z - i omega t)
+Y = exp(i dot(k,r) - i omega t)
 
 Y1 = e / (2 i m omega) Y
 Y2 = e / (2 i m omega) conj(Y)
 
-check(H == (Y1 - Y2) dot((E0x,E0y,E0z), -i hbar grad(psi())))
+check(H == (Y1 - Y2) dot(E0, -i hbar grad(psi())))
 
 "ok"
 </textarea>
