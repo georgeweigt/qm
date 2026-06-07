@@ -44,7 +44,7 @@ to absorption and the second to emission.
 =\mathbf k\times\frac{\mathbf E}{\omega}
 \end{align*}
 
-(b)
+(b) Recall that $e=-q$. Electron charge $q$ is negative hence $e$ is positive.
 \begin{align*}
 H&=\frac{1}{2m}(\mathbf p+e\mathbf A)\cdot(\mathbf p+e\mathbf A)-e\varphi+V
 \\[1ex]
@@ -78,6 +78,12 @@ In exponential form
 \begin{equation*}
 H'=\frac{e}{2im\omega}\exp(i\mathbf k\cdot\mathbf r-i\omega t)\mathbf E_0\cdot\mathbf p
 -\frac{e}{2im\omega}\exp(-i\mathbf k\cdot\mathbf r+i\omega t)\mathbf E_0\cdot\mathbf p
+\end{equation*}
+
+Noting that $e^{i\omega t}$ is independent of $\mathbf r$ we can also write
+\begin{equation*}
+H'=\frac{e}{2im\omega}\exp(i\mathbf k\cdot\mathbf r)\mathbf E_0\cdot\mathbf pe^{-i\omega t}
+-\frac{e}{2im\omega}\exp(-i\mathbf k\cdot\mathbf r)\mathbf E_0\cdot\mathbf pe^{i\omega t}
 \end{equation*}
 
 \end{document}
