@@ -168,4 +168,46 @@ where
 \wp=-e\langle\psi_b|z|\psi_a\rangle
 \end{equation*}
 
+(d)
+\begin{align*}
+\psi_a&=\frac{1}{\sqrt{\pi a^3}}e^{-r/a}
+\\
+\psi_b&=\frac{1}{\sqrt{l^3}}e^{i\mathbf k\cdot\mathbf r}
+\end{align*}
+
+In polar coordinates $z=r\cos\theta$ hence
+\begin{equation*}
+\langle\psi_b|z|\psi_a\rangle
+=\frac{2\pi}{\sqrt{\pi a^3l^3}}
+\int_0^\infty\int_0^\pi
+\exp(ikr\cos\theta-r/a)\,r\cos\theta\,r^2\sin\theta\,dr\,d\theta
+\end{equation*}
+
+Change of variable $u=\cos\theta$, $du=-\sin\theta\,d\theta$.
+\begin{equation*}
+\langle\psi_b|z|\psi_a\rangle
+=\frac{2\pi}{\sqrt{\pi a^3l^3}}
+\int_0^\infty\int_{-1}^1
+\exp(ikru-r/a)\,ur^3\,dr\,du
+\end{equation*}
+
+Solve the integral over $u$ then over $r$.
+\begin{equation*}
+\langle\psi_b|z|\psi_a\rangle
+=\left(\frac{2\pi}{\sqrt{\pi a^3l^3}}\right)
+\frac{16ia^5k}{(a^2k^2+1)^3}
+\end{equation*}
+
+Hence
+\begin{equation*}
+\langle\psi_b|H'_{ba}|\psi_a\rangle
+=\frac{eE_0}{2}\langle\psi_b|z|\psi_a\rangle e^{-i\omega t}
+\end{equation*}
+
+and
+\begin{equation*}
+|\langle\psi_b|H'_{ba}|\psi_a\rangle|^2
+=\frac{256\pi e^2E_0^2a^7k^2}{l^3(a^2k^2+1)^6}
+\end{equation*}
+
 \end{document}
