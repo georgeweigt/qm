@@ -32,6 +32,19 @@ perturbation is given by
 plus a term proportional to $E_0^2$ that we will ignore.
 {\it Note}: the first term corresponds
 to absorption and the second to emission.
+
+(c) In the dipole approximation we set $e^{i\mathbf k\cdot\mathbf r}\approx1$.
+With the electromagnetic wave
+polarized along the $z$ direction, show that the matrix element for absorption is then
+\begin{equation*}
+V_{ba}=-\frac{\omega_0}{\omega}\wp E_0.
+\end{equation*}
+
+Compare Equation 11.41. They’re not {\it exactly} the same; would the difference effect
+our calculations in Section 11.2.3 or 11.3?
+Why or why not? {\it Hint}: To turn the
+matrix element of $\mathbf p$ into a matrix element of $\mathbf r$, you need to prove the following
+identity: $im[\hat H^0,\hat{\mathbf r}]=\hbar\hat{\mathbf p}$.
 }
 
 (a)
@@ -89,6 +102,70 @@ Noting that $e^{i\omega t}$ is independent of $\mathbf r$ we can also write
 \begin{equation*}
 H'=\frac{e}{2im\omega}\exp(i\mathbf k\cdot\mathbf r)\mathbf E_0\cdot\mathbf pe^{-i\omega t}
 -\frac{e}{2im\omega}\exp(-i\mathbf k\cdot\mathbf r)\mathbf E_0\cdot\mathbf pe^{i\omega t}
+\end{equation*}
+
+(c) The matrix element for absorption is
+\begin{equation*}
+\langle\psi_b|H'_{ba}|\psi_a\rangle
+=\frac{e}{2im\omega}\langle\psi_b|\mathbf E_0\cdot\mathbf p|\psi_a\rangle e^{-i\omega t}
+\end{equation*}
+
+For electromagnetic waves
+polarized along the $z$ direction
+\begin{equation*}
+\mathbf E_0\cdot\mathbf p
+=E_0\begin{pmatrix}0\\0\\1\end{pmatrix}
+\cdot\begin{pmatrix}p_x\\p_y\\p_z\end{pmatrix}
+=E_0p_z
+\end{equation*}
+
+Hence
+\begin{equation*}
+\langle\psi_b|H'_{ba}|\psi_a\rangle
+=\frac{eE_0}{2im\omega}\langle\psi_b|p_z|\psi_a\rangle e^{-i\omega t}
+\end{equation*}
+
+Then by
+\begin{equation*}
+p_z=\frac{im}{\hbar}[H^0,z]
+=\frac{im}{\hbar}(H^0z-zH^0)
+\end{equation*}
+
+we have
+\begin{align*}
+\langle\psi_b|H'_{ba}|\psi_a\rangle
+&=\frac{eE_0}{2\omega\hbar}
+\left[\langle\psi_b|H^0z|\psi_a\rangle-\langle\psi_b|zH^0|\psi_a\rangle\right]
+e^{-i\omega t}
+\\[1ex]
+&=\frac{eE_0}{2\omega\hbar}
+\left[\langle\psi_b|E_bz|\psi_a\rangle-\langle\psi_b|zE_a|\psi_a\rangle\right]
+e^{-i\omega t}
+\\[1ex]
+&=\frac{eE_0}{2\omega}\frac{E_b-E_a}{\hbar}
+\langle\psi_b|z|\psi_a\rangle
+e^{-i\omega t}
+\\[1ex]
+&=\frac{eE_0}{2}\frac{\omega_0}{\omega}
+\langle\psi_b|z|\psi_a\rangle
+e^{-i\omega t}
+\end{align*}
+
+Hence
+\begin{equation*}
+V_{ba}=2e^{i\omega t}\langle\psi_b|H'_{ba}|\psi_a\rangle
+=eE_0\frac{\omega_0}{\omega}
+\langle\psi_b|z|\psi_a\rangle
+\end{equation*}
+
+Rearrange as
+\begin{equation*}
+V_{ba}=-\frac{\omega_0}{\omega}\wp E_0
+\end{equation*}
+
+where
+\begin{equation*}
+\wp=-e\langle\psi_b|z|\psi_a\rangle
 \end{equation*}
 
 \end{document}

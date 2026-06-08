@@ -21,17 +21,13 @@ check(curl(A) == -cross(E,k) / omega)
 
 "Verify part (b)"
 
--- p dot A
+PA = -i hbar div(A psi(x,y,z,t))
 
-T1 = -i hbar div(A psi(x,y,z,t))
+AP = dot(A, -i hbar grad(psi(x,y,z,t)))
 
--- A dot p
+check(PA + AP == 2 AP - i hbar psi(x,y,z,t) div(A))
 
-T2 = dot(A, -i hbar grad(psi(x,y,z,t)))
-
-check(T1 + T2 == 2 T2 - i hbar psi(x,y,z,t) div(A))
-
-H = e / m T2
+H = e / m AP
 Y = e / (2 i m omega) exp(i dot(k,r) - i omega t)
 
 check(H == (Y + conj(Y)) dot(E0, -i hbar grad(psi(x,y,z,t))))
